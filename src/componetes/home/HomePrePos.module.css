@@ -1,0 +1,394 @@
+/* Estilos gerais */
+.section {
+  padding: 2rem 0;
+  background-color: #13141c;
+  color: white;
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  min-height: 100vh;
+  width: 100%;
+  padding-bottom: 100px;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto; /* Centraliza o container */
+    padding: 0 20px;
+    padding-top: 70px;
+    gap: 40px;
+  }
+  
+  .leftSide {
+    flex: 1;
+    flex-direction: column;
+    gap: 20px;
+    display: flex;
+    justify-content: center;
+    min-height: 100%;
+  }
+  
+  .rightSide {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 20px;
+    align-self: flex-start;
+    height: 100%;
+  }
+  
+  /* Estilos do cabeçalho */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .title {
+    font-size: 2.1rem;
+    margin: 0;
+  }
+  
+  .controls {
+    display: flex;
+    gap: 10px;
+    width: 15%;
+  }
+  
+  .controlButton {
+    background: none;
+    border: 1px solid #f8c537;
+    color: #f8c537;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .controlButton:hover {
+    background-color: #f8c537;
+    color: #000;
+  }
+  
+  .description {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin: 0;
+    width: 90%;
+  }
+
+
+/* Accordion Styles */
+.accordionWrapper {
+  flex: 1;
+  overflow: hidden; /* Contém o conteúdo dentro da área */
+  position: relative; /* Cria um contexto de posicionamento */
+}
+
+.accordion {
+    position: absolute;
+    background-color: #13141c;
+    border-radius: 8px;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+    width: 530px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .accordionItem {
+    position: relative;
+    overflow: hidden;
+    flex-grow: 1;
+    max-height: 150px;
+  }
+  
+  .accordionItem::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      #868bb3 0%,
+      #44475c 20%,
+      rgba(11, 12, 15, 0) 80%
+    );
+  }
+  
+  .accordionItem:last-child {
+    border-bottom: none;
+  }
+  
+  .accordionItem::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 0%;
+    width: 3px;
+    background: #f8c537;
+    transition: height 0.3s ease-out;
+  }
+  
+  .accordionItem.active::before {
+    height: 100%;
+  }
+
+  .accordionButton {
+    width: 100%;
+    padding: 0.5rem 1.5rem;
+    background-color: #13141c;
+    color: white;
+    border: none;
+    text-align: left;
+    font-weight: 550;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4rem;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  
+  
+  .accordionButton:hover {
+    background-color: #13141c;
+  }
+  
+  .accordionIcon {
+    transition: transform 0.3s ease;
+    color: white;
+    margin-left: 10px;
+    font-size: 1.1rem;
+    opacity: 1;
+    font-weight: 40; 
+  }
+  
+  .rotate {
+    transform: rotate(180deg);
+  }
+  
+  .accordionButton.active .accordionIcon {
+    transform: rotate(180deg);
+  }
+  
+  .accordionItem.active .accordionIcon {
+    transform: rotate(180deg);
+  }
+  
+  .accordionCollapse {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    background-color: #13141c;
+  }
+  
+  .accordionCollapse.show {
+    max-height: 500px;
+  }
+  
+  .accordionBody {
+    padding: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+  }
+  
+  .tabButtons {
+    display: flex;
+    margin-bottom: 1.5rem;
+    gap: 2rem;
+    justify-content: flex-start;
+  }
+  
+  .tabButton {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #000; /* Texto preto */
+    background-color: #53555e; 
+    padding: 0.4rem 3rem;
+    border-radius: 30px; /* Bordas arredondadas */
+    margin: 0; /* Remove margens anteriores */
+    display: inline-block; /* Permite ficarem na mesma linha */
+    width: auto; /* Largura conforme conteúdo */
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    position: relative;
+    white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+  }
+  
+  .tabButton:hover {
+    background-color: #3d3f50; /* Amarelo um pouco mais escuro no hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  }
+  
+  .activeTab {
+    background-color: #f8c537;
+    color: #000;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+  
+  .activeTab:hover {
+    background-color: #e6b82e; 
+  }
+  
+  /* Cartaz Styles */
+  .cartazWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 100px;
+  }
+  
+  .cartazContainer {
+    width: 400px;
+    position: relative;
+    border-radius: 10px;
+    background-color: #1a1b24;
+    overflow: hidden;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 0;
+  }
+  
+  .cartazContainer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1px; /* espessura da borda */
+    border-radius: 10px;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.144),
+      rgba(255, 255, 255, 0.05)
+    );
+    
+    /* Máscara para deixar só a "linha da borda" visível com degrade */
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+  
+    z-index: -1;
+    pointer-events: none;
+  }
+  
+  .cartaz {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+    min-height: 500px;
+    position: relative;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .cartazContainer::after {
+    content: '';
+    position: absolute;
+    top: -2;
+    left: -2;
+    right: -2;
+    bottom: -2;
+    border: 1px solid rgba(255, 255, 255, 0.253);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .interesseWrapper {
+    display: inline-flex;
+    align-items: center;
+    background-color: #13141c;
+    border-radius: 6px;
+    width: fit-content;
+ }
+ 
+ .interesseText {
+    font-weight: 600;
+    font-size: 0.8rem;
+    margin-right: 10px;
+    color: rgb(230, 229, 229);
+    white-space: nowrap;
+ }
+ 
+ .iconButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: #FFD700;
+    border: 1px solid #000;
+    border-radius: 4px;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+ }
+ 
+ .arrowIcon {
+    font-size: 12px;
+    color: #000;
+    transition: all 0.2s ease;
+ }
+ 
+ .iconButton:hover {
+    background-color: #000;
+ }
+ 
+ .iconButton:hover .arrowIcon {
+    color: #FFD700;
+ }
+
+
+
+ .dotsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #555;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.activeDot {
+  background-color: #f8c537;
+  transform: scale(1.2);
+}

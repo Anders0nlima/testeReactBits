@@ -15,6 +15,19 @@
    flex-direction: column;
    align-items: center; /* Centraliza horizontalmente */
  }
+
+ .tituloPrincipal {
+   font-size: 45px !important;
+   font-weight: 700 !important; 
+   margin: 0 0 1.5rem 0 !important;
+   line-height: 1.2 !important;
+   background: linear-gradient(90deg, #ffffff, #e0e0e0) !important;
+   -webkit-background-clip: text !important;
+   background-clip: text !important;
+   position: relative !important; 
+   padding-bottom: 1rem !important; 
+ }
+
  
  .primeiroContudo h1 {
    font-size: 45px;
